@@ -1,0 +1,149 @@
+
+import java.util.*;
+
+class shape{
+	
+	public void getdata() {
+		
+	}
+	public void display() {
+		
+	}
+	
+}
+
+class Rectangle extends shape{
+    
+	Scanner sc=new Scanner(System.in);
+	private float lenght,breadth;
+	public void getdata() {
+		
+		System.out.println("Enter the values of lenght and breadth");
+		lenght=sc.nextFloat();
+		breadth=sc.nextFloat();
+	}
+	
+	public void display() {
+		System.out.println("Area of rectangle is "+ (lenght*breadth));
+	}
+}
+
+class circle extends shape{
+	
+	Scanner sc=new Scanner(System.in);
+	private float radius;
+	public void getdata() {
+		System.out.println("Enter the value of Radius ");
+		radius=sc.nextInt();
+	}
+	
+	public void display() {
+		System.out.println("Area of circle is "+ (3.14*radius*radius));
+	}
+	
+}
+
+class triangle extends shape{
+	
+	Scanner sc=new Scanner(System.in);
+	private float base,height;
+	public void getdata() {
+		
+		System.out.println("Enter the values of Base and height ");
+		base=sc.nextFloat();
+		height=sc.nextFloat();
+		
+	}
+	
+	public void display() {
+		System.out.println("Area of triangle is " + (0.5*base*height));
+	}
+}
+public class Ass5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int ch;
+		shape r=new Rectangle();
+		shape c=new circle();
+		shape t=new triangle();
+		
+		do {
+		System.out.println("\nEnter your choice: ");
+		System.out.println("1.Rectangle \n2.Circle \n3.Triangle \n4.Exit");
+		
+		Scanner sc=new Scanner(System.in);
+		ch=sc.nextInt();
+		
+		switch(ch) {
+		      
+		   case(1):
+			  r.getdata();
+		      r.display();
+		      break;
+		    
+		   case(2):
+			   c.getdata();
+		       c.display();
+		       break;
+		       
+		   case(3):
+			   t.getdata();
+		       t.display();
+		       break;
+		       
+		   case(4):
+			   System.exit(0);
+		   
+		    default:
+		    	System.out.println("No such case");
+		}
+		}while(ch!=4);
+		
+	}
+
+}
+
+
+
+
+//OUTPUT
+
+Enter your choice: 
+1.Rectangle 
+2.Circle 
+3.Triangle 
+4.Exit
+1
+Enter the values of lenght and breadth
+2
+3
+Area of rectangle is 6.0
+
+Enter your choice: 
+1.Rectangle 
+2.Circle 
+3.Triangle 
+4.Exit
+2
+Enter the value of Radius 
+4
+Area of circle is 50.24
+
+Enter your choice: 
+1.Rectangle 
+2.Circle 
+3.Triangle 
+4.Exit
+3
+Enter the values of Base and height 
+2
+4
+Area of triangle is 4.0
+
+Enter your choice: 
+1.Rectangle 
+2.Circle 
+3.Triangle 
+4.Exit
+4
