@@ -1,0 +1,182 @@
+
+
+Sakshi Arvind Chaudhari
+SI 49
+
+
+import java.util.*;
+
+class shape
+{
+	
+	public void calculate() {
+		
+	}
+	
+	public void display() {
+		
+	}
+}
+
+class circle extends shape
+{
+	private double area;
+	public void calculate()
+	{
+		 int r;
+		
+		System.out.println("enter the radius:");
+		Scanner sc= new Scanner(System.in);
+		r=sc.nextInt();
+		
+		 area= 3.14*r*r;
+		
+		
+	}
+	
+	public void display()
+	{
+	
+		System.out.println("The area of circle is:"+area);
+		
+		
+	}
+	
+	
+}
+
+
+class rectangle extends shape
+{
+	
+	private int area1;
+	public void calculate()
+	{
+		int l,b;
+
+		System.out.println("enter the length and breadth:");
+		Scanner sc= new Scanner(System.in);
+		l=sc.nextInt();
+		b=sc.nextInt();
+		area1= l*b;
+
+	}
+	
+	public void display()
+	{
+		
+		System.out.println("The area of rectangle is:"+area1);
+		
+		
+		
+	}
+	
+	
+	
+}
+
+
+class triangle extends shape
+{
+	private double area2;
+	public void calculate()
+	{
+		int ht,base;
+		System.out.println("enter the height and base:");
+		Scanner sc= new Scanner(System.in);
+        ht=sc.nextInt();
+		base=sc.nextInt();
+		area2=0.5*ht*base;
+		
+
+	}
+	
+	public void display()
+	{
+		
+		System.out.println("The area of triangle is:"+area2);
+	}
+		
+	
+}
+
+
+
+public class inheritance2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int ch=0;
+		
+		Scanner sc= new Scanner(System.in);
+		
+		
+		
+		do {
+			System.out.println("Enter your choice\n1.Circle area\n2.Rectangle area\n3.Triangle area");
+			ch=sc.nextInt();
+			switch(ch)
+			{
+			case 1:
+				shape c=new circle();
+				c.calculate();
+				c.display();
+				break;
+				
+			case 2:
+				shape r= new rectangle();
+				r.calculate();
+				r.display();
+				break;
+				
+			case 3:
+				shape t=new triangle();
+				t.calculate();
+				t.display();
+				break;
+			
+			
+			}
+			
+			
+			
+			
+			
+		}while(ch!=3);
+		
+		
+         
+	}
+
+}
+
+
+
+OUTPUT:
+Enter your choice
+1.Circle area
+2.Rectangle area
+3.Triangle area
+1
+enter the radius:
+3
+The area of circle is:28.259999999999998
+Enter your choice
+1.Circle area
+2.Rectangle area
+3.Triangle area
+2
+enter the length and breadth:
+2
+9
+The area of rectangle is:18
+Enter your choice
+1.Circle area
+2.Rectangle area
+3.Triangle area
+3
+enter the height and base:
+10
+4
+The area of triangle is:20.0
