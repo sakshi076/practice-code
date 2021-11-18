@@ -1,0 +1,146 @@
+#include <iostream>
+using namespace std;
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+class bst
+{
+	int data;
+	bst *left, *right, *root;
+	public:
+		bst* create(int);
+		int search(bst*, int);
+		bst* insert(bst*, bst*);
+		void inorder(bst*);
+};
+
+bst* bst::create(int item)
+{
+	bst *newnode = new bst;
+	newnode->data = item;
+	newnode->left = NULL;
+	newnode->right = NULL;
+	return newnode;	
+}
+
+int bst::search(bst*root, int key)
+{
+	bst *temp;
+	temp = root;
+	if(key == temp->data)
+		return 1;
+	else
+	{
+		while(temp!=NULL)
+		{
+			if(key < temp->data)
+			{
+				temp = temp->left;	
+			}
+			else if(key > temp->data)
+			{
+				temp = temp->right;
+			}
+			else
+			{
+				return 1;
+			}	
+		}
+		if(temp == NULL)
+		
+			return 0;
+		}
+	}
+
+
+bst*bst::insert(bst*root,bst*parent)
+{
+	bst*newnode,*temp;
+	int key,valid;
+	cout<<"Enter the element you want to enter"<<endl;
+	cin>>key;
+	newnode=create(key);
+	if(root==NULL)
+	{
+		root=newnode;
+	}
+	else
+	{
+		temp = root;
+		valid = search(root, key);
+		if(valid == 0)
+		{
+			while(temp!=NULL)
+			{
+				parent = temp;
+				
+				if(key < temp->data)
+					temp = temp->left;	
+				else
+					temp = temp->right;
+			}
+			
+				if(key < parent->data)
+					parent->left = newnode;
+				else
+					parent->right = newnode;
+		}
+		else
+		{
+			cout<<"\nElement already there\n";
+			return root;
+		}
+	}
+	}
+	
+
+
+void bst::inorder(bst*root)
+{
+	
+	if(root == NULL)
+		return;
+	inorder(root->left);
+	cout<<root->data<<"\t";
+	inorder(root->right);
+
+}
+int main() {
+	bst t;
+	bst*parent;
+	bst*root=NULL;
+	int ch,key,valid;
+	do{
+	
+	cout<<"enter the choice:"<<endl;
+	cout<<"1.Insert"<<"\n"<<"2.Search"<<"\n3.Inorder traversal"<<"\n4.Exit";
+	cin>>ch;
+	switch(ch)
+	{
+		case 1:
+			root=t.insert(root,parent);
+			break;
+			
+	    case 2:
+		     cout<<"Enter the element to be searched:";
+			 cin>>key;
+			 valid=t.search(root,key);
+			 if(valid==0)
+			    cout<<"\nElement not found ";
+				else
+					cout<<"\nElement found ";
+				break;
+				
+		case 3:
+				t.inorder(root);
+				break;
+		case 4:
+				exit(0);
+			default :
+				cout<<"\nINVALID CHOICE";
+		}				
+	}while(ch!=5);
+	
+}
+	
+	
+
