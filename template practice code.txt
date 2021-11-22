@@ -1,0 +1,119 @@
+#include <iostream>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+template <class t>
+
+class matrix
+{
+	t mat[5][5];
+	int row,col;
+	public:
+		void getdata();
+		void add(matrix,matrix);
+		void display();
+	
+};
+
+
+template <class t>
+void matrix<t>::getdata()
+{
+	int i,j;
+	cout<<"rows:"<<endl;
+	cin>>row;
+	cout<<"cols:"<<endl;
+	cin>>col;
+	
+	
+	
+	for(i=0;i<row;i++)
+	{
+		for(j=0;j<col;j++)
+		{
+			cout<<"elements"<<endl;
+			cin>>mat[i][j];
+		}
+		
+	}
+	
+}
+
+
+template <class t>
+void matrix<t>::display()
+{
+	int i,j;
+	for(i=0;i<row;i++)
+	{
+		for(j=0;j<col;j++)
+		{
+			cout<<mat[i][j]<<"\t";
+		}
+		cout<<"\n";
+	}
+}
+
+
+template<class t>
+void matrix<t>::add(matrix x,matrix y) 
+{
+	//validation is imp if row and col of matrices are equal
+	int i,j;
+	row=x.row;
+	col=x.col;
+	for(i=0;i<row;i++)
+	{
+		for(j=0;j<col;j++)
+		{
+			mat[i][j]=x.mat[i][j]+y.mat[i][j];
+		}
+	}
+	
+}
+
+int main(int argc, char** argv) {
+	
+	int ch;
+	do{
+		cout<<"\nEnter your choice";
+	    cout<<"\n1.Integer matrix \n2.Double matrix \n3.Exit";
+	    cin>>ch;
+	    
+	    switch(ch)
+	    {
+	    	case(1):
+	    		matrix<int> m1,m2,m3;
+	            cout<<"insert the first matrix"<<endl;
+	            m1.getdata();
+	            cout<<"insert the second matrix"<<endl;
+	            m2.getdata();
+	             cout<<"\n";
+              //	cout<<"first matrix is"<<endl;
+                 //	m1.display();
+                //	cout<<"second matrix is"<<endl;
+                //	m2.display();
+           	 m3.add(m1,m2);
+	        m3.display();
+	        break;
+	        
+	        case(2):
+	        		matrix<double> n1,n2,n3;
+	               cout<<"insert the first matrix"<<endl;
+	              n1.getdata();
+	              cout<<"insert the second matrix"<<endl;
+	             n2.getdata();
+	              cout<<"\n";
+	              n3.add(n1,n2);
+	              n3.display();
+	              
+	              break;
+	              
+	        case (3):
+			       exit;      
+	    		
+		}
+		
+	}while(ch!=3);
+	     return 0;
+	
+}
