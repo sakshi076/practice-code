@@ -1,0 +1,170 @@
+import java.util.*;
+
+public class array {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//int arr[];
+		Scanner sc=new Scanner(System.in);
+
+	
+		int ch;
+		do {
+			System.out.println("Enter the choice :\n0.Exit \n1.Integer \n2.String");
+			ch=sc.nextInt();
+			
+			switch(ch)
+			{
+			case 0:
+				System.exit(0);
+				break;
+				
+			
+			
+			case 1:
+				ArrayList<Integer> al=new ArrayList<Integer>( );
+			
+				
+				int ch1;
+				do {
+					System.out.println("Enter the choice:\n1.Add\n2.Even\n3.odd\n4.Prime\n5.Display\n6.Exit");
+					ch1=sc.nextInt();
+					
+					switch(ch1)
+					{
+					case 1:
+						
+						int element;
+						
+						System.out.println("Enter the integer element:");
+						element=sc.nextInt();
+						al.add(element);
+						System.out.println("Array size is :"+al.size());
+						break;
+					case 2:
+						System.out.println("Even numbers are :");
+						int count=0;
+						for(int i=0;i<al.size();i++)
+						{
+							if(al.get(i)%2==0)
+							{
+								System.out.print(al.get(i)+"\t");
+								count=count+1;
+							}
+						}
+						System.out.println("Total even numbers are : "+count);
+						break;
+						
+					case 3:
+						System.out.println("Odd numbers are :");
+						int count1=0;
+						for(int i=0;i<al.size();i++)
+						{
+							if(al.get(i)%2!=0)
+							{
+								System.out.print(al.get(i)+"\t");
+								count1=count1+1;
+							}
+						}
+						System.out.println("Total odd numbers are : "+count1);
+						break;
+						
+					case 4:
+						//int v=0;
+						int count2=0;
+						for(int i=0;i<al.size();i++){
+							
+						int v=0;
+						
+						for(int j=2;j<al.get(i);j++) {
+							
+							if(al.get(i)%j==0) {
+								v=1;
+							}
+							
+						}
+						
+						if(v==0) {
+							count2=count2+1;
+						}
+						}
+						System.out.println("Total prime numbers are : "+count2);
+						break;
+					
+						
+					
+					
+					
+					case 5:
+						System.out.println("The integer elements are:");
+						for(int i=0;i<al.size();i++)
+						{
+						     System.out.println(al.get(i));
+						}
+						break;
+						
+						
+					case 6:
+						break;
+					
+					
+					
+					}
+				}while(ch1!=6);
+			break;
+			case 2:
+				ArrayList <String> als=new ArrayList<String>();
+				int ch2;
+				do{
+					System.out.println("\n1.add\n2.Palindrome\n0.Exit");
+					ch2=sc.nextInt();
+					switch(ch2) {
+					case 1:
+					String str;				
+					System.out.println("Enter the String:");
+					str=sc.next();
+					als.add(str);
+					System.out.println("The Strings are:");
+					for(int i=0;i<als.size();i++)
+					{
+					     System.out.println(als.get(i));
+					}
+					break;
+					
+					
+					
+					case 2:
+						for(int i=0;i<als.size();i++) {
+						String reverse = "";
+						int length=als.get(i).length();
+						 for ( int j = length - 1; j >= 0; j-- )  
+					         reverse = reverse + als.get(i).charAt(j);
+					      if (als.get(i).equals(reverse))  
+					         System.out.println(als.get(i) +" is a palindrome.");  
+					      else  
+					         System.out.println(als.get(i)+" is not a palindrome.");   
+						 
+						}
+					 break;
+					 
+					case 0:
+						break;
+						}
+				}while(ch2!=0);
+				
+				
+			
+				
+			}
+			
+				
+			}while(ch!=0);
+		
+		
+		
+		
+
+	}
+
+}
+//while hasNext
